@@ -1,0 +1,259 @@
+:root {
+  font-family: 'Courier New', monospace;
+  line-height: 1.5;
+  font-weight: bold; /* Set font-weight to bold */
+  font-size: 20px; /* Set a base font size */
+
+  color-scheme: light dark;
+  color: rgba(159, 115, 115, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: bold; /* Set font-weight to bold */
+  color: #646cff;
+  text-decoration: inherit;
+  font-size: 20px
+}
+
+
+body {
+  margin: 0;
+  min-width: 320px;
+  
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: bold; /* Set font-weight to bold */
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  font-size: 20px;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #b07ebe;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.app {
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  text-align: center;
+  background-image: url('/cat images/flowerbackground.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+
+.card-set {
+  font-family: 'Courier New', monospace;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.flashcard {
+  font-family: 'Courier New', monospace;
+  perspective: 1000px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-right: 550px; /* Add margin to move the Flashcard towards the left */
+ 
+}
+
+.card {
+  width: 700%;
+  max-width: 800px;
+  height: 700px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.question,
+.answer {
+  font-size: 1.2em;
+  color: #000;
+}
+
+.image-container {
+  margin-top: 20px;
+  height: 350px; /* Set a fixed height */
+  overflow: hidden; /* Hide any part of the image that exceeds the fixed height */
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  width: 100%;
+  margin-top: 40px;
+  box-sizing: border-box;
+  margin-right: 270px; /* Add right margin */
+}
+.buttons-container button {
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #9370db; /* Light Purple Color */
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  margin: 0 5px;
+  height : 50px; /* Set a fixed height */
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+}
+
+.card.flipped .front {
+  z-index: 1;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+  z-index: 2;
+}
+.card {
+  /* ...existing styles... */
+  border: 2px solid #9370db; /* Add a light purple border */
+}
+
+
+.card-move {
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-move.next {
+  transform: translateX(20px);
+}
+
+.card-move.prev {
+  transform: translateX(-20px);
+}
+
+
+
+.input-container {
+  display: flex;
+  justify-content:  flex-start;
+  align-items: center;
+  margin: 20px 0;
+  margin-left: 50px;
+}
+
+.guess-input {
+  width: 300px; /* Increase the width */
+  height: 50px; /* Increase the height */
+  margin-right: 20px;
+}
+
+.correct {
+  border-color: green;
+  border-width: 3px;
+}
+
+.incorrect {
+  border-color: red;
+  border-width: 3px;
+}
+
+.input-wrapper {
+  margin-left: 100px; /* Move the margin from .input-container to .input-wrapper */
+}
+/* App.css */
+button {
+  background-color: #9370db !important; /* Make the button purple */
+  color: rgb(0, 0, 0) !important; /* Make the text black */
+}
+
+/* App.css */
+button.shuffle {
+  margin-left: 20px; /* Add left margin */
+}
+
+
+
+.streaks-container {
+  position: absolute;
+  top: 600px;
+  margin-left: 125px; /* Adjust this value to move the container more or less to the right */
+  color: black; /* Make the text color black */
+  font-size: 24px; /* Adjust this value to make the font bigger or smaller */
+}
